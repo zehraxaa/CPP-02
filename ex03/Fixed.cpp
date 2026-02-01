@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/30 21:31:59 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/02/01 16:04:58 by aaydogdu         ###   ########.fr       */
+/*   Created: 2026/02/01 16:05:14 by aaydogdu          #+#    #+#             */
+/*   Updated: 2026/02/01 19:44:16 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,31 @@
 
 Fixed::Fixed(void) //Fixed a
 {
-	std::cout<<"Default constructor called"<<std::endl;
+	//std::cout<<"Default constructor called"<<std::endl;
 	this->fixedValue = 0;
 }
 
 Fixed::Fixed(const int value)
 {
-	std::cout<<"Int constructor called"<<std::endl;
+	//std::cout<<"Int constructor called"<<std::endl;
 	this->fixedValue = value << fracBits;
 }
 
 Fixed::Fixed(const float value)
 {
-	std::cout<<"Float constructor called"<<std::endl;
+	//std::cout<<"Float constructor called"<<std::endl;
 	this->fixedValue = roundf(value * (1 << fracBits));
 }
 
 Fixed::Fixed(const Fixed &other) // Fixed b(a);
 {
-	std::cout<<"Copy constructor called"<<std::endl;
+	//std::cout<<"Copy constructor called"<<std::endl;
 	*this = other;
 }
 
 Fixed& Fixed::operator=(const Fixed &other) // c = b
 {
-	std::cout<<"Copy assignment operator called"<<std::endl;
+	//std::cout<<"Copy assignment operator called"<<std::endl;
 	if (this != &other)
 		this->fixedValue = other.getRawBits();
 	return *this;
@@ -46,7 +46,7 @@ Fixed& Fixed::operator=(const Fixed &other) // c = b
 
 Fixed::~Fixed()
 {
-	std::cout<<"Destructor called"<<std::endl;
+	//std::cout<<"Destructor called"<<std::endl;
 }
 
 int Fixed::getRawBits() const
