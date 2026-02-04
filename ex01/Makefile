@@ -1,4 +1,4 @@
-SRC = main1.cpp Fixed1.cpp
+SRC = main.cpp Fixed.cpp
 
 CC = c++
 

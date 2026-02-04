@@ -6,7 +6,7 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 23:55:38 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/02/01 14:43:10 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/02/04 18:40:10 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int main()
 	Fixed const b(5.05f);
 
 	std::cout<<a<<std::endl;
+	std::cout<<"b: "<<b.getRawBits()<<std::endl;
 	std::cout<<b.getRawBits()<<std::endl;
 	std::cout<<b<<std::endl;
 	if ( a > b)
@@ -33,4 +34,7 @@ int main()
 	std::cout<<a<<std::endl;
 	std::cout<<b<<std::endl;
 	std::cout<<b*a<<std::endl;
+	std::cout<<b/a<<std::endl;
+	a.setRawBits(12);
+	std::cout<<"a: "<<a<<std::endl;
 }

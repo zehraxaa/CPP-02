@@ -6,7 +6,7 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 16:06:49 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/02/01 19:45:25 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/02/04 22:35:57 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main()
 	Point b(10, 0);
 	Point c(0, 10);
 
-	Point p1(10,0);
+	Point p1(1, 1);
 	std::cout<<p1<<std::endl;
 	
 	if (bsp(a,b,c,p1))

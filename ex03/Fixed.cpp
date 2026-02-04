@@ -6,7 +6,7 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 16:05:14 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/02/01 19:44:16 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/02/04 21:13:49 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,7 +149,7 @@ Fixed Fixed::operator*(const Fixed &other) const
 {
 	Fixed res;
 
-	long long multi = (long long) (this->getRawBits() * other.getRawBits());
+	long long multi = (long long)this->getRawBits() * (long long)other.getRawBits();
 	res.setRawBits(multi >> fracBits);
 	return res;
 }
@@ -158,8 +158,8 @@ Fixed Fixed::operator/(const Fixed &other) const
 {
 	Fixed res;
 
-	long long multi = (long long) (this->getRawBits() / other.getRawBits());
-	res.setRawBits(multi << fracBits);
+	long long div = ((long long)this->getRawBits() << fracBits) / other.getRawBits();
+	res.setRawBits(div);
 	return res;
 }
 

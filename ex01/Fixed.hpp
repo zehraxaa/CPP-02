@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed1.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,32 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED1_HPP
-# define FIXED1_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
 #include <iostream>
 #include <cmath>
 #include <ostream>
 
-class Fixed1
+class Fixed
 {
 	private:
 		int	fixedValue;
 		static const int	fracBits = 8;
 		
 	public:
-		Fixed1(void);
-		Fixed1(const float value);
-		Fixed1(const int value);
-		Fixed1(const Fixed1 &other);
-		Fixed1 &operator=(const Fixed1 &other);
-		~Fixed1();
+		Fixed(void);
+		Fixed(const float value);
+		Fixed(const int value);
+		Fixed(const Fixed &other);
+		Fixed &operator=(const Fixed &other);
+		~Fixed();
 		int	getRawBits() const;
 		void setRawBits(const int raw);
 		int toInt() const;
 		float toFloat() const;
+		void setStatus(int s);
+		int getStatus();
 };
 
-std::ostream& operator<<(std::ostream& os, const Fixed1& fixed);
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 
 #endif

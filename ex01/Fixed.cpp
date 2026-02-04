@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed11.cpp                                         :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 14:22:55 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/01/30 23:57:19 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/02/04 18:18:50 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed1.hpp"
+#include "Fixed.hpp"
 
-Fixed1::Fixed1(void) //Fixed1 a
+Fixed::Fixed(void) //Fixed a
 {
 	std::cout<<"Default constructor called"<<std::endl;
 	this->fixedValue = 0;
 }
 
-Fixed1::Fixed1(const int value)
+Fixed::Fixed(const int value)
 {
 	std::cout<<"Int constructor called"<<std::endl;
 	this->fixedValue = value << fracBits;
 }
 
-Fixed1::Fixed1(const float value)
+Fixed::Fixed(const float value)
 {
 	std::cout<<"Float constructor called"<<std::endl;
 	this->fixedValue = roundf(value * (1 << fracBits));
 }
 
-Fixed1::Fixed1(const Fixed1 &other) // Fixed1 b(a);
+Fixed::Fixed(const Fixed &other) // Fixed b(a);
 {
 	std::cout<<"Copy constructor called"<<std::endl;
-	*this = other;
+	this->fixedValue = other.fixedValue;
 }
 
-Fixed1& Fixed1::operator=(const Fixed1 &other) // c = b
+Fixed& Fixed::operator=(const Fixed &other) // c = b
 {
 	std::cout<<"Copy assignment operator called"<<std::endl;
 	if (this != &other)
@@ -44,33 +44,33 @@ Fixed1& Fixed1::operator=(const Fixed1 &other) // c = b
 	return *this;
 }
 
-Fixed1::~Fixed1()
+Fixed::~Fixed()
 {
 	std::cout<<"Destructor called"<<std::endl;
 }
 
-int Fixed1::getRawBits() const
+int Fixed::getRawBits() const
 {
 	return fixedValue;
 }
 
-void Fixed1::setRawBits(const int raw)
+void Fixed::setRawBits(const int raw)
 {
 	this->fixedValue = raw;
 }
 
-int Fixed1::toInt() const
+int Fixed::toInt() const
 {
 	return fixedValue >> fracBits;
 }
 
-float Fixed1::toFloat() const
+float Fixed::toFloat() const
 {
 	return (float)fixedValue / (1 << fracBits);
 }
 
-std::ostream& operator<<(std::ostream& os, const Fixed1& Fixed1)
+std::ostream& operator<<(std::ostream& os, const Fixed& obj)
 {
-	os << Fixed1.toFloat();
+	os << obj.toFloat();
 	return os;
 }
