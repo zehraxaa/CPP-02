@@ -34,8 +34,6 @@ class Fixed
 		void setRawBits(const int raw);
 		int toInt() const;
 		float toFloat() const;
-		void setStatus(int s);
-		int getStatus();
 };
 
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
