@@ -6,7 +6,7 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 00:25:12 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/02/01 16:04:37 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/02/05 11:29:49 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ class Fixed
 		bool operator!=(const Fixed &other) const;
 		Fixed operator+(const Fixed &other) const;
 		Fixed operator-(const Fixed &other) const;
-		Fixed& operator++(); //pre-increament
-		Fixed operator++(int); //post-increament
+		Fixed& operator++();
+		Fixed operator++(int);
 		Fixed& operator--();
 		Fixed operator--(int);
 		Fixed operator*(const Fixed &other) const;

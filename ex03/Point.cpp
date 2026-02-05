@@ -6,7 +6,7 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 15:44:42 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/02/04 21:19:53 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/02/05 11:31:37 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,10 @@ Point::Point(const Point &other) : x(other.getX()), y(other.getY())
 	//std::cout<<"Copy constructor called"<<std::endl;
 }
 
-//const değişkenler sonradan değiştirilemez. sadece ilk oluştukları an değer alırlarmış
 Point& Point::operator=(const Point &original)
 {
 	//std::cout<<"Copy assignment operator called"<<std::endl;
-	(void)original; //derleyici unused parameter hatası vermesin diye
+	(void)original;
 	return *this;
 }
 

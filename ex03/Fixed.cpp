@@ -6,13 +6,13 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 16:05:14 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/02/04 21:13:49 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/02/05 11:30:57 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed(void) //Fixed a
+Fixed::Fixed(void)
 {
 	//std::cout<<"Default constructor called"<<std::endl;
 	this->fixedValue = 0;
@@ -30,13 +30,13 @@ Fixed::Fixed(const float value)
 	this->fixedValue = roundf(value * (1 << fracBits));
 }
 
-Fixed::Fixed(const Fixed &other) // Fixed b(a);
+Fixed::Fixed(const Fixed &other)
 {
 	//std::cout<<"Copy constructor called"<<std::endl;
 	*this = other;
 }
 
-Fixed& Fixed::operator=(const Fixed &other) // c = b
+Fixed& Fixed::operator=(const Fixed &other)
 {
 	//std::cout<<"Copy assignment operator called"<<std::endl;
 	if (this != &other)
@@ -117,7 +117,7 @@ Fixed Fixed::operator-(const Fixed &other) const{
 	return res;
 }
 
-Fixed& Fixed::operator++() //kendi değerini değiştirilmiş şekilde döndürür. const olamaz
+Fixed& Fixed::operator++()
 {
 	this->fixedValue++;
 	return *this;
@@ -126,8 +126,6 @@ Fixed& Fixed::operator++() //kendi değerini değiştirilmiş şekilde döndür�
 Fixed Fixed::operator++(int)
 {
 	Fixed original(*this);
-	//original.fixedValue = this->fixedValue;
-	//bu işlemi, copy assignment operatorun yaptığı şeyi manuel olarak tekrar yapmışım. o zaman neden assignment operatorum var yani? hiçbir işe yaramayacaksa
 	this->fixedValue++;
 	return original;
 }
@@ -140,7 +138,7 @@ Fixed& Fixed::operator--()
 
 Fixed Fixed::operator--(int)
 {
-	Fixed original(*this); //copy constructor kullan. &other olarak parametre alır o yüzden *this gönder
+	Fixed original(*this);
 	this->fixedValue--;
 	return original;
 }

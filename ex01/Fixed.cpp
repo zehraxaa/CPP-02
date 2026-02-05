@@ -6,13 +6,13 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 14:22:55 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/02/04 18:18:50 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/02/05 11:30:01 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed(void) //Fixed a
+Fixed::Fixed(void)
 {
 	std::cout<<"Default constructor called"<<std::endl;
 	this->fixedValue = 0;
@@ -30,13 +30,13 @@ Fixed::Fixed(const float value)
 	this->fixedValue = roundf(value * (1 << fracBits));
 }
 
-Fixed::Fixed(const Fixed &other) // Fixed b(a);
+Fixed::Fixed(const Fixed &other)
 {
 	std::cout<<"Copy constructor called"<<std::endl;
 	this->fixedValue = other.fixedValue;
 }
 
-Fixed& Fixed::operator=(const Fixed &other) // c = b
+Fixed& Fixed::operator=(const Fixed &other)
 {
 	std::cout<<"Copy assignment operator called"<<std::endl;
 	if (this != &other)
